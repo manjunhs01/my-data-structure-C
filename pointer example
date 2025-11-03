@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int a = 10;       
+    int *ptr;        
+    ptr = &a;         
+    printf("Value of a: %d\n", a);
+    printf("Address of a: %p\n", &a);
+    printf("Value stored in pointer (address of a): %p\n", ptr);
+    printf("Value pointed to by pointer: %d\n", *ptr);
+    *ptr = 20;  
+    printf("New value of a after pointer update: %d\n", a);
+
+    return 0;
+}
+Output:
+
+pgsql
+Copy code
+Value of a: 10
+Address of a: 0x7ffee83b9c9c
+Value stored in pointer (address of a): 0x7ffee83b9c9c
+Value pointed to by pointer: 10
+New value of a after pointer update: 20
+Would you like me to show a more advanced pointer program (e.g., arrays, functions, or dynamic memory)?
+
+
