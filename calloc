@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int *ptr;
+    int i;
+
+    // allocate memory for 3 integers (initialized to 0)
+    ptr = (int *)calloc(3, sizeof(int));
+
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+        return 0;
+    }
+
+    printf("Using calloc (initialized to 0):\n");
+    for (i = 0; i < 3; i++)
+        printf("%d ", ptr[i]);
+
+    free(ptr);
+    return 0;
+}
