@@ -4,8 +4,6 @@
 int main() {
     int *ptr;
     int i;
-
-    // allocate memory for 3 integers
     ptr = (int *)malloc(3 * sizeof(int));
 
     if (ptr == NULL) {
