@@ -1,0 +1,14 @@
+#include<stdio.h>
+#define CAP 40
+void manja( int a[],int n);
+void manja(int a[CAP], int n)
+{
+    for (int i=0; i < n&&i<CAP; i++) {
+        a[i]=i;
+        printf("%d",a[i]);
+    }
+}
+int main(){
+int a[CAP] , n=50;
+manja(a,n);
+}
