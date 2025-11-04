@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int n1, n2, i = 0, j = 0, k = 0;
+    printf("Enter sizes of arrays: ");
+    scanf("%d%d", &n1, &n2);
+
+    int *a = malloc(n1 * sizeof(int));
+    int *b = malloc(n2 * sizeof(int));
+    printf("Enter sorted elements of A: ");
+    for (i = 0; i < n1; i++) scanf("%d", &a[i]);
+    printf("Enter sorted elements of B: ");
+    for (i = 0; i < n2; i++) scanf("%d", &b[i]);
+
+    int *c = malloc((n1 + n2) * sizeof(int));
+    i = j = 0;
+    while (i < n1 && j < n2) {
+        if (a[i] < b[j]) c[k++] = a[i++];
+        else if (a[i] > b[j]) c[k++] = b[j++];
+        else { c[k++] = a[i]; i++; j++; }
+    }
+    while (i < n1) c[k++] = a[i++];
+    while (j < n2) c[k++] = b[j++];
+    c = realloc(c, k * sizeof(int));
+
+    printf("Merged array: ");
+    for (i = 0; i < k; i++) printf("%d ", c[i]);
+    printf("\nProgram by: MANJUNATH N H (1SV24CS070)\n");
+
+    free(a); free(b); free(c);
+    return 0;
+}
