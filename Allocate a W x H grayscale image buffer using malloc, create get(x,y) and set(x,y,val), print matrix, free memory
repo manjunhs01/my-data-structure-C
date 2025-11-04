@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int W, H, i, j;
+    printf("Enter width and height: ");
+    scanf("%d%d", &W, &H);
+
+    unsigned char *img = malloc(W * H);
+    printf("Enter pixel values:\n");
+    for (i = 0; i < H; i++)
+        for (j = 0; j < W; j++)
+            scanf("%hhu", img + i*W + j);
+
+    printf("Image Matrix:\n");
+    for (i = 0; i < H; i++) {
+        for (j = 0; j < W; j++)
+            printf("%3d ", *(img + i*W + j));
+        printf("\n");
+    }
+
+    printf("Program by: MANJUNATH N H (1SV24CS070)\n");
+    free(img);
+    return 0;
+}
